@@ -70,17 +70,17 @@ def run(
         conf_thres=0.25,  # confidence threshold
         iou_thres=0.45,  # NMS IOU threshold
         max_det=1000,  # maximum detections per image
-        device='',  # cuda device, i.e. 0 or 0,1,2,3 or cpu
-        show_vid=False,  # show results
+        device='0',  # cuda device, i.e. 0 or 0,1,2,3 or cpu
+        show_vid=True,  # show results
         save_txt=False,  # save results to *.txt
         save_conf=False,  # save confidences in --save-txt labels
         save_crop=False,  # save cropped prediction boxes
-        save_vid=False,  # save confidences in --save-txt labels
+        save_vid=True,  # save confidences in --save-txt labels
         nosave=False,  # do not save images/videos
         classes=None,  # filter by class: --class 0, or --class 0 2 3
         agnostic_nms=False,  # class-agnostic NMS
         augment=False,  # augmented inference
-        visualize=False,  # visualize features
+        visualize=True,  # visualize features
         update=False,  # update all models
         project=ROOT / 'runs/track',  # save results to project/name
         name='exp',  # save results to project/name
@@ -271,6 +271,7 @@ def run(
 
             # Stream results
             if show_vid:
+                im0 = cv2.resize(im0, (1080, 720))
                 cv2.imshow(str(p), im0)
                 cv2.waitKey(1)  # 1 millisecond
 

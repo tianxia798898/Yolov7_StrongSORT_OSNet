@@ -118,3 +118,11 @@ If you find this project useful in your research, please consider cite:
 ## Contact 
 
 For Yolov7 DeepSort OSNet bugs and feature requests please visit [GitHub Issues](https://github.com/mikel-brostrom/Yolov7_StrongSORT_OSNet/issues). For business inquiries or professional support requests please send an email to: yolov5.deepsort.pytorch@gmail.com
+
+
+python track.py --source a.mp4 --strong-sort-weights osnet_x0_25_imagenet.pt --show-vid --device=0 --classes=0
+
+python track.py --source a.mp4 --strong-sort-weights osnet_x1_0_imagenet.pt --show-vid --device=0 --classes=0
+python track.py --source a.mp4 --strong-sort-weights model.pth.tar-60 --show-vid --device=0 --classes=0
+
+model.pth.tar-60
